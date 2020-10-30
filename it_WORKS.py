@@ -59,7 +59,7 @@ cle_feat = pd.concat([feat_norm,feat_NoNorm], axis=1)
 # print(cle_features.head())
 
 #train
-X_train, X_test, y_train, y_test = train_test_split(cle_features, cle_label, test_size=0.3, random_state=321, stratify=cle_label)
+X_train, X_test, y_train, y_test = train_test_split(cle_feat, cle_label, test_size=0.3, random_state=321, stratify=cle_label)
 
 lrclf_best = LogisticRegression(multi_class='ovr', penalty='l2', C=464.15888336127773, solver='lbfgs', max_iter=2000)
 lrclf_best.fit(X_train, y_train)
